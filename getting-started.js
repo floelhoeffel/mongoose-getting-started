@@ -20,14 +20,17 @@ async function main() {
 
   const Kitten = mongoose.model("Kitten", kittySchema);
 
-  const silence = new Kitten({ name: "Silence" });
+  const kittens = await Kitten.find();
+  console.log(kittens);
+
+  //   const silence = new Kitten({ name: "Silence" });
   //   console.log(silence.name); // 'Silence'
 
-  const fluffy = new Kitten({ name: "fluffy" });
+  //   const fluffy = new Kitten({ name: "fluffy" });
   //   fluffy.speak(); // "Meow name is fluffy"
 
-  await silence.save();
-  await fluffy.save();
+  //   await silence.save();
+  //   await fluffy.save();
 
-  return;
+  //   return;
 }
